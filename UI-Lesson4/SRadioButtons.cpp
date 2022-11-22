@@ -29,16 +29,6 @@ void SRadioButtons::Construct(const FArguments& InArgs)
 	}
 	
 	/*
-	if (DefaultActiveCheck.Get() <= Count.Get())
-	{
-		CurrentIndex = DefaultActiveCheck.Get();
-	}
-	else
-	{
-		CurrentIndex = 0;
-	}
-
-	
 	//Static 3-slot box
 	ChildSlot
 	[
@@ -63,7 +53,7 @@ TSharedRef<SWidget> SRadioButtons::CreateCheckBox(int32 InIndex, FString InText)
 {
 	return SNew(SCheckBox)
 		.IsChecked_Raw(this, &SRadioButtons::IsChecked, InIndex)
-        .OnCheckStateChanged_Raw(this, &SRadioButtons::OnCheckBoxStateChanged, InIndex)
+		.OnCheckStateChanged_Raw(this, &SRadioButtons::OnCheckBoxStateChanged, InIndex)
 		[
 			SNew(STextBlock)
 			.Text(FText::FromString(InText))
